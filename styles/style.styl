@@ -1,0 +1,83 @@
+@import "fonts"
+@import "flexbox"
+
+darker-green = #04E4A2
+lighter-green = #69F0AE
+hover-color = #FDD835
+footer-color = #FEFCF2
+darker-red = #E94643
+lighter-red = #EF5350
+lighter-black = #1D1D1D
+grey = #BDBDBD
+
+/* -------- Genera part ----------*/
+html
+	width: 100%
+	height: 100%
+*
+	padding: 0
+	margin: 0
+	border: 0
+	font-size: 100%
+	vertical-align: baseline
+	box-sizing: border-box
+
+body
+	line-height: 1
+	width: 100%
+	height: 100%
+	font-family: Monserrat, sans-serif
+	font-size: 16px
+	background: yellow
+ul
+	li
+		list-style: none
+a
+	text-decoration: none
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+
+/* -------- Header part ----------*/
+
+.green-line
+	width: 100%
+	background: darker-green
+	height: 22px
+#header
+	background: darker-red
+	height: 100px
+
+	nav
+		flexbox(flex)
+		justify-content(space-between)
+		align-items(center)
+
+		.logo
+			font-size: 2em 
+			color: #ffffff
+			font-weight: bold
+		ul	
+			a:hover
+				text-decoration: underline
+				color: hover-color
+
+	
+/* -------- Footer part ----------*/
+#footer
+	flexbox(flex)
+	justify-content(space-around)
+	background: footer-color
+	height: 73px
+	.copyright, .contact
+		align-self: center
+	.contact
+		flexbox(flex)
+		align-items: center
+		img
+			margin-right: 15px
+
+
+
+
