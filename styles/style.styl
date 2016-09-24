@@ -35,7 +35,7 @@ ul
 a
 	text-decoration: none
 
-.container
+.positioner
 	max-width: 1200px
 	margin: 0 auto
 
@@ -48,35 +48,75 @@ a
 #header
 	background: darker-red
 	height: 100px
-
+	flexbox(flex)
+	flex-wrap(wrap)
 	nav
+		width: 100%
+		color: #ffffff
 		flexbox(flex)
 		justify-content(space-between)
-		align-items(center)
-
+		align-items: baseline
 		.logo
 			font-size: 2em 
-			color: #ffffff
 			font-weight: bold
+			padding-left: 13%
 		ul	
+			li
+				text-transform: uppercase
 			a:hover
-				text-decoration: underline
-				color: hover-color
+				border-bottom: 3px solid hover-color
 
-	
+/* -------- Main part ----------*/
+main 
+	.red
+		background: lighter-red
+		width: 100%
+		height: 104vh
+	.container
+		flexbox(flex)
+		.phone, .content
+			flex(1)
+		.content
+			flexbox(flex)
+			flex-wrap: (wrap)
+			color: #ffffff
+			h2
+				text-transform: uppercase
+				font-size: 1.8em
+				font-weight: normal
+			.introduction
+				height: 104vh
+		.phone
+			.frame
+				position: relative
+				background: url("../images/phone_frame.png") no-repeat
+				width: 100%
+				height: 100%
+				img
+					
+					position: absolute
+					top: 115px
+					left: 28px
 /* -------- Footer part ----------*/
 #footer
-	flexbox(flex)
-	justify-content(space-around)
 	background: footer-color
 	height: 73px
-	.copyright, .contact
-		align-self: center
-	.contact
+	flexbox(flex)
+	.footer
+		width: 100%
 		flexbox(flex)
-		align-items: center
-		img
-			margin-right: 15px
+		flex(50%)
+		.copyright, .contact
+			align-self: center
+			flex(50%)
+		.copyright
+			padding-left: 9%
+		.contact
+			flexbox(flex)
+			align-items: center
+			padding-left: 2%
+			img
+				margin-right: 19px
 
 
 
