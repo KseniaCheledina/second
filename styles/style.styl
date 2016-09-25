@@ -8,8 +8,9 @@ footer-color = #FEFCF2
 darker-red = #E94643
 lighter-red = #EF5350
 lighter-black = #1D1D1D
+form-border = #E3F2FD
 grey = #BDBDBD
-
+white = #ffffff
 /* -------- Genera part ----------*/
 html
 	width: 100%
@@ -26,9 +27,10 @@ body
 	line-height: 1
 	width: 100%
 	height: 100%
-	font-family: Monserrat, sans-serif
+	font-family: Montserrat, sans-serif
 	font-size: 16px
-	background: yellow
+	background: grey
+	color: white
 ul
 	li
 		list-style: none
@@ -52,7 +54,6 @@ a
 	flex-wrap(wrap)
 	nav
 		width: 100%
-		color: #ffffff
 		flexbox(flex)
 		justify-content(space-between)
 		align-items: baseline
@@ -63,42 +64,104 @@ a
 		ul	
 			li
 				text-transform: uppercase
-			a:hover
-				border-bottom: 3px solid hover-color
+				a
+					border-bottom: 3px solid hover-color
 
 /* -------- Main part ----------*/
 main 
-	.red
-		background: lighter-red
-		width: 100%
-		height: 104vh
 	.container
 		flexbox(flex)
 		.phone, .content
 			flex(1)
-		.content
 			flexbox(flex)
+		.content
 			flex-wrap: (wrap)
-			color: #ffffff
-			h2
-				text-transform: uppercase
-				font-size: 1.8em
-				font-weight: normal
 			.introduction
-				height: 104vh
+				flexbox(flex)
+				justify-content(center)
+				flex-direction(column)
+				line-height: 1.15
+				font-weight: normal
+				align-items(center)
+				max-height: 104vh
+				background: lighter-red
+				h2
+					text-transform: uppercase
+					font-size: 1.8em
+					margin-bottom: 5.2%
+					
+				p 
+					font-size: 1.2em
+					border-bottom: 1px dashed grey
+					padding-bottom: 5.5%
+					margin-bottom: 5.5%
+
+				button
+					align-self(flex-end)
+					text-transform: uppercase
+					background: lighter-green
+					color: #ffffff
+					font-size: 1.2em
+					padding: 3.4% 5.5%
+					border-radius: 5px 
+			form
+				flexbox(flex)
+				flex-direction(column)
+				.input-section 
+					flexbox(flex)
+					flex-wrap(wrap)
+					justify-content: space-between
+					input, select
+						flex-basis(40%)
+						border-radius: 4px	
+						margin: 1.5% 0
+						border: 2px solid form-border
+					input
+						padding: 15px 10px
+						
+					textarea
+						padding: 15px 20px;
+						flex(100%)
+						border-radius: 5px	
+						margin: 1.5%
+				.submit	
+					align-self(flex-end)
+					input[type="submit"]
+						background: darker-red
+						height: 14px
+						width: 55px
+						color: white
+				
+					
+				
+				
 		.phone
+			justify-content(center)
 			.frame
+				flexbox(flex)
+				align-items(center)
+				justify-content(center)
 				position: relative
-				background: url("../images/phone_frame.png") no-repeat
+				max-width: 388px
 				width: 100%
 				height: 100%
-				img
-					
+				max-height: 814px
+				background: url("../images/phone_frame.png") no-repeat
+				.screen
 					position: absolute
+					z-index: 10
+					max-width: 329px
+					max-height: 583px
 					top: 115px
 					left: 28px
+					width: 100%
+					height: 100%
+					background: url("../images/phone_screen.png") no-repeat
+
+
 /* -------- Footer part ----------*/
 #footer
+	color: #000000
 	background: footer-color
 	height: 73px
 	flexbox(flex)
@@ -108,7 +171,7 @@ main
 		flex(50%)
 		.copyright, .contact
 			align-self: center
-			flex(50%)
+			flex(40%)
 		.copyright
 			padding-left: 9%
 		.contact
