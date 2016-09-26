@@ -1,5 +1,5 @@
 @import "fonts"
-@import "flexbox"
+
 
 darker-green = #04E4A2
 lighter-green = #69F0AE
@@ -9,8 +9,10 @@ darker-red = #E94643
 lighter-red = #EF5350
 lighter-black = #1D1D1D
 form-border = #E3F2FD
-grey = #BDBDBD
+grey = #636363
+grey-special = rgba(99, 99, 99, 0.57)
 white = #ffffff
+red-height = 583px
 /* -------- Genera part ----------*/
 html
 	width: 100%
@@ -20,7 +22,6 @@ html
 	margin: 0
 	border: 0
 	font-size: 100%
-	vertical-align: baseline
 	box-sizing: border-box
 
 body
@@ -29,7 +30,6 @@ body
 	height: 100%
 	font-family: Montserrat, sans-serif
 	font-size: 16px
-	background: grey
 	color: white
 ul
 	li
@@ -50,113 +50,189 @@ a
 #header
 	background: darker-red
 	height: 100px
-	flexbox(flex)
-	flex-wrap(wrap)
+	display: flex
+	flex-wrap: wrap
 	nav
 		width: 100%
-		flexbox(flex)
-		justify-content(space-between)
-		align-items: baseline
+		display: flex
+		justify-content: space-between
 		.logo
 			font-size: 2em 
 			font-weight: bold
 			padding-left: 13%
 		ul	
+			padding: 0.4% 1% 0 0
 			li
 				text-transform: uppercase
 				a
 					border-bottom: 3px solid hover-color
+					padding-bottom: 1.5%
 
 /* -------- Main part ----------*/
-main 
-	.container
-		flexbox(flex)
-		.phone, .content
-			flex(1)
-			flexbox(flex)
-		.content
-			flex-wrap: (wrap)
-			.introduction
-				flexbox(flex)
-				justify-content(center)
-				flex-direction(column)
-				line-height: 1.15
-				font-weight: normal
-				align-items(center)
-				max-height: 104vh
-				background: lighter-red
-				h2
-					text-transform: uppercase
-					font-size: 1.8em
-					margin-bottom: 5.2%
-					
-				p 
-					font-size: 1.2em
-					border-bottom: 1px dashed grey
-					padding-bottom: 5.5%
-					margin-bottom: 5.5%
+.red 
+	background: lighter-red
+	position: absolute
+	width: 100%
+	height: red-height
+	z-index: -1
+.darker-line
+	position: absolute
+	border-bottom: 82px solid darker-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 100%
+	left: -583px
+	top: 255px
+	-webkit-transform: rotate(37.6deg)
+    transform: rotate(37.6deg)
+	-ms-transform: rotate(37.6deg)
+.lighter-line
+	position: absolute
+	border-bottom: 82px solid lighter-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 100%
+	left: -570px
+	top: 365px
+	-webkit-transform: rotate(37deg)
+    transform: rotate(37deg)
+	-ms-transform: rotate(37deg)
 
-				button
-					align-self(flex-end)
-					text-transform: uppercase
-					background: lighter-green
-					color: #ffffff
-					font-size: 1.2em
-					padding: 3.4% 5.5%
-					border-radius: 5px 
-			form
-				flexbox(flex)
-				flex-direction(column)
-				.input-section 
-					flexbox(flex)
-					flex-wrap(wrap)
-					justify-content: space-between
-					input, select
-						flex-basis(40%)
-						border-radius: 4px	
-						margin: 1.5% 0
-						border: 2px solid form-border
-					input
-						padding: 15px 10px
-						
-					textarea
-						padding: 15px 20px;
-						flex(100%)
-						border-radius: 5px	
-						margin: 1.5%
-				.submit	
-					align-self(flex-end)
-					input[type="submit"]
-						background: darker-red
-						height: 14px
-						width: 55px
-						color: white
-				
+.container
+	display: flex
+	flex-wrap: nowrap
+	z-index: 1
+	.content
+		display: flex
+		flex-wrap: wrap
+		flex: 1 0 58.2%
+		padding: 15.6% 4.2% 0 10.7%;
+		height: 100%
+		.introduction
+			display: flex
+			justify-content: center
+			flex-direction: column
+			line-height: 1.2
+			font-weight: normal
+			align-items: center
+			max-height: red-height
+			height: 100%
+			padding-right: 3.5%
+			margin-bottom: 30%
+			h2
+				text-transform: uppercase
+				font-size: 1.8em
+				margin-bottom: 4.5%
+				color: white
 					
+			p 
+				font-size: 1.2em
+				border-bottom: 1px dashed darker-red
+				padding-bottom: 5.5%
+				margin-bottom: 5.2%
+				color: white
+
+			button
+				align-self: flex-end
+				text-transform: uppercase
+				background: lighter-green
+				color: #ffffff
+				font-size: 1.2em
+				width: 166px
+				height: 53px
+				border-radius: 6px 
+		.form
+			margin-bottom: 5.5%
+		form
+			display: flex
+			flex-direction: column
+			.form-caption
+				color: lighter-red
+				font-size: 1.2em
+				padding: 1% 0 0 4.3%
+				margin-bottom: 1.5%
+			.textarea
+				flex-basis: 100%
+				margin-top: 1.8%
+				margin-bottom: 2.4%
+				textarea
+					padding: 13px 21px
+					border: 2px solid form-border
+					border-radius: 4px
+					width: 100%
+					height: 98px
+					overflow: auto
+					resize: none
+					color: grey-special
+							
+			.submit	
+				align-self: flex-end
+				input[type="submit"]
+					background: darker-red
+					height: 45px
+					width: 120px
+					font-size: 1.1em
+					color: white
+					border-radius: 8px
+					text-transform: uppercase	
+
+			.input-section 
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
 				
-				
-		.phone
-			justify-content(center)
-			.frame
-				flexbox(flex)
-				align-items(center)
-				justify-content(center)
-				position: relative
-				max-width: 388px
+				input
+					flex-basis: 48%
+					border-radius: 4px	
+					border: 2px solid form-border
+					padding: 13px 19px
+					margin: 1.85% 0
+					color: grey
+				input:nth-child(2), select
+					padding: 13px 35px
+				.select-style
+					flex-basis: 48%
+					display: flex
+					padding: 1% 0
+					background: white url("../images/arrow.png") no-repeat 92% 52%
+					select
+						color: grey-special
+						flex-basis: 100%
+						border-radius: 4px	
+						border: 2px solid form-border
+						padding: 13px 35px
+						margin: 1.85% 0
+						background-color: transparent
+						-webkit-appearance: none
+		       			-moz-appearance: none
+		            	appearance: none
+	.phone
+		display: flex
+		justify-content: flex-end
+		flex: 1 0 41.8%
+		margin-bottom: 2.6%
+		.frame
+			z-index: 9
+			display: flex
+			align-self: center
+			position: relative
+			max-width: 100%
+			width: 388px
+			height: 814px
+			max-height: 100%
+			background: url("../images/phone_frame.png") no-repeat
+			.screen
+				position: absolute
+				z-index: 10
+				max-width: 329px
+				max-height: 583px
+				top: 115px
+				left: 28px
 				width: 100%
 				height: 100%
-				max-height: 814px
-				background: url("../images/phone_frame.png") no-repeat
-				.screen
-					position: absolute
-					z-index: 10
-					max-width: 329px
-					max-height: 583px
-					top: 115px
-					left: 28px
-					width: 100%
-					height: 100%
-					background: url("../images/phone_screen.png") no-repeat
+				background: url("../images/phone_screen.png") no-repeat
 
 
 /* -------- Footer part ----------*/
@@ -164,21 +240,24 @@ main
 	color: #000000
 	background: footer-color
 	height: 73px
-	flexbox(flex)
+	display: flex
 	.footer
 		width: 100%
-		flexbox(flex)
-		flex(50%)
+		display: flex
+		flex: 1 0 50%
 		.copyright, .contact
 			align-self: center
-			flex(40%)
+			flex: 1 0 40%
 		.copyright
-			padding-left: 9%
+			padding-left: 9.5%
 		.contact
-			flexbox(flex)
+			display: flex
 			align-items: center
-			padding-left: 2%
-			img
+			padding-left: 2.4%
+			.mail-icon
+				background: url("../images/mail_icon.png") no-repeat 0 0
+				width: 30px
+				height: 24px
 				margin-right: 19px
 
 

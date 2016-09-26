@@ -28,7 +28,6 @@ html {
   margin: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline;
   box-sizing: border-box;
 }
 body {
@@ -37,7 +36,6 @@ body {
   height: 100%;
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  background: #bdbdbd;
   color: #fff;
 }
 ul li {
@@ -59,169 +57,205 @@ a {
 #header {
   background: #e94643;
   height: 100px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 #header nav {
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
 }
 #header nav .logo {
   font-size: 2em;
   font-weight: bold;
   padding-left: 13%;
 }
+#header nav ul {
+  padding: 0.4% 1% 0 0;
+}
 #header nav ul li {
   text-transform: uppercase;
 }
 #header nav ul li a {
   border-bottom: 3px solid #fdd835;
+  padding-bottom: 1.5%;
 }
 /* -------- Main part ----------*/
-main .container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-main .container .phone,
-main .container .content {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-main .container .content {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-main .container .content .introduction {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  line-height: 1.15;
-  font-weight: normal;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-height: 104vh;
+.red {
   background: #ef5350;
+  position: absolute;
+  width: 100%;
+  height: 583px;
+  z-index: -1;
 }
-main .container .content .introduction h2 {
+.darker-line {
+  position: absolute;
+  border-bottom: 82px solid #04e4a2;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 100%;
+  left: -583px;
+  top: 255px;
+  -webkit-transform: rotate(37.6deg);
+}
+transform: rotate(37.6deg) {
+  -ms-transform: rotate(37.6deg);
+}
+.lighter-line {
+  position: absolute;
+  border-bottom: 82px solid #69f0ae;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 100%;
+  left: -570px;
+  top: 365px;
+  -webkit-transform: rotate(37deg);
+}
+transform: rotate(37deg) {
+  -ms-transform: rotate(37deg);
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: 1;
+}
+.container .content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 58.2%;
+  padding: 15.6% 4.2% 0 10.7%;
+  height: 100%;
+  -moz-appearance: none;
+  appearance: none;
+}
+.container .content .introduction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.2;
+  font-weight: normal;
+  align-items: center;
+  max-height: 583px;
+  height: 100%;
+  padding-right: 3.5%;
+  margin-bottom: 30%;
+}
+.container .content .introduction h2 {
   text-transform: uppercase;
   font-size: 1.8em;
-  margin-bottom: 5.2%;
+  margin-bottom: 4.5%;
+  color: #fff;
 }
-main .container .content .introduction p {
+.container .content .introduction p {
   font-size: 1.2em;
-  border-bottom: 1px dashed #bdbdbd;
+  border-bottom: 1px dashed #e94643;
   padding-bottom: 5.5%;
-  margin-bottom: 5.5%;
+  margin-bottom: 5.2%;
+  color: #fff;
 }
-main .container .content .introduction button {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: flex-end;
+.container .content .introduction button {
   align-self: flex-end;
   text-transform: uppercase;
   background: #69f0ae;
   color: #fff;
   font-size: 1.2em;
-  padding: 3.4% 5.5%;
-  border-radius: 5px;
+  width: 166px;
+  height: 53px;
+  border-radius: 6px;
 }
-main .container .content form {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.container .content .form {
+  margin-bottom: 5.5%;
+}
+.container .content form {
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
-main .container .content form .input-section {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+.container .content form .form-caption {
+  color: #ef5350;
+  font-size: 1.2em;
+  padding: 1% 0 0 4.3%;
+  margin-bottom: 1.5%;
 }
-main .container .content form .input-section input,
-main .container .content form .input-section select {
-  -webkit-flex-basis: 40%;
-  -ms-flex-basis: 40%;
-  flex-basis: 40%;
-  border-radius: 4px;
-  margin: 1.5% 0;
+.container .content form .textarea {
+  flex-basis: 100%;
+  margin-top: 1.8%;
+  margin-bottom: 2.4%;
+}
+.container .content form .textarea textarea {
+  padding: 13px 21px;
   border: 2px solid #e3f2fd;
+  border-radius: 4px;
+  width: 100%;
+  height: 98px;
+  overflow: auto;
+  resize: none;
+  color: rgba(99,99,99,0.57);
 }
-main .container .content form .input-section input {
-  padding: 15px 10px;
-}
-main .container .content form .input-section textarea {
-  padding: 15px 20px;
-  -webkit-flex: 100%;
-  -ms-flex: 100%;
-  flex: 100%;
-  border-radius: 5px;
-  margin: 1.5%;
-}
-main .container .content form .submit {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: flex-end;
+.container .content form .submit {
   align-self: flex-end;
 }
-main .container .content form .submit input[type="submit"] {
+.container .content form .submit input[type="submit"] {
   background: #e94643;
-  height: 14px;
-  width: 55px;
+  height: 45px;
+  width: 120px;
+  font-size: 1.1em;
   color: #fff;
+  border-radius: 8px;
+  text-transform: uppercase;
 }
-main .container .phone {
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-main .container .phone .frame {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.container .content form .input-section {
   display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container .content form .input-section input {
+  flex-basis: 48%;
+  border-radius: 4px;
+  border: 2px solid #e3f2fd;
+  padding: 13px 19px;
+  margin: 1.85% 0;
+  color: #636363;
+}
+.container .content form .input-section input:nth-child(2),
+.container .content form .input-section select {
+  padding: 13px 35px;
+}
+.container .content form .input-section .select-style {
+  flex-basis: 48%;
+  display: flex;
+  padding: 1% 0;
+  background: #fff url("../images/arrow.png") no-repeat 92% 52%;
+}
+.container .content form .input-section .select-style select {
+  color: rgba(99,99,99,0.57);
+  flex-basis: 100%;
+  border-radius: 4px;
+  border: 2px solid #e3f2fd;
+  padding: 13px 35px;
+  margin: 1.85% 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+.container .phone {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 0 41.8%;
+  margin-bottom: 2.6%;
+}
+.container .phone .frame {
+  z-index: 9;
+  display: flex;
+  align-self: center;
   position: relative;
-  max-width: 388px;
-  width: 100%;
-  height: 100%;
-  max-height: 814px;
+  max-width: 100%;
+  width: 388px;
+  height: 814px;
+  max-height: 100%;
   background: url("../images/phone_frame.png") no-repeat;
 }
-main .container .phone .frame .screen {
+.container .phone .frame .screen {
   position: absolute;
   z-index: 10;
   max-width: 329px;
@@ -237,40 +271,29 @@ main .container .phone .frame .screen {
   color: #000;
   background: #fefcf2;
   height: 73px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 #footer .footer {
   width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 50%;
-  -ms-flex: 50%;
-  flex: 50%;
+  flex: 1 0 50%;
 }
 #footer .footer .copyright,
 #footer .footer .contact {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
-  -webkit-flex: 40%;
-  -ms-flex: 40%;
-  flex: 40%;
+  flex: 1 0 40%;
 }
 #footer .footer .copyright {
-  padding-left: 9%;
+  padding-left: 9.5%;
 }
 #footer .footer .contact {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  padding-left: 2%;
+  padding-left: 2.4%;
 }
-#footer .footer .contact img {
+#footer .footer .contact .mail-icon {
+  background: url("../images/mail_icon.png") no-repeat 0 0;
+  width: 30px;
+  height: 24px;
   margin-right: 19px;
 }
