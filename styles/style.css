@@ -59,6 +59,7 @@ a {
   height: 100px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 #header nav {
   width: 100%;
@@ -88,38 +89,11 @@ a {
   height: 583px;
   z-index: -1;
 }
-.darker-line {
-  position: absolute;
-  border-bottom: 82px solid #04e4a2;
-  border-left: 50px solid transparent;
-  border-right: 35px solid transparent;
-  height: 0;
-  width: 100%;
-  left: -583px;
-  top: 255px;
-  -webkit-transform: rotate(37.6deg);
-}
-transform: rotate(37.6deg) {
-  -ms-transform: rotate(37.6deg);
-}
-.lighter-line {
-  position: absolute;
-  border-bottom: 82px solid #69f0ae;
-  border-left: 50px solid transparent;
-  border-right: 35px solid transparent;
-  height: 0;
-  width: 100%;
-  left: -570px;
-  top: 365px;
-  -webkit-transform: rotate(37deg);
-}
-transform: rotate(37deg) {
-  -ms-transform: rotate(37deg);
-}
 .container {
   display: flex;
   flex-wrap: nowrap;
   z-index: 1;
+  position: relative;
 }
 .container .content {
   display: flex;
@@ -266,6 +240,30 @@ transform: rotate(37deg) {
   height: 100%;
   background: url("../images/phone_screen.png") no-repeat;
 }
+.container .phone .darker-line {
+  position: absolute;
+  border-bottom: 82px solid #04e4a2;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 130%;
+  left: -67.7%;
+  top: 12.3%;
+  z-index: 3;
+  -webkit-transform: rotate(37.6deg);
+}
+.container .phone .lighter-line {
+  position: absolute;
+  border-bottom: 82px solid #69f0ae;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 130%;
+  left: -66.9%;
+  top: 23%;
+  z-index: 4;
+  -webkit-transform: rotate(37.6deg);
+}
 /* -------- Footer part ----------*/
 #footer {
   color: #000;
@@ -296,4 +294,25 @@ transform: rotate(37deg) {
   width: 30px;
   height: 24px;
   margin-right: 19px;
+}
+@media screen and (min-width: 1145px) and (max-width: 1199px) {
+  .red {
+    height: 48.7vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1144px) {
+  .container .phone {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .phone {
+    display: none;
+  }
+  .form-caption,
+  .input-section,
+  .select-style,
+  .submit {
+    flex-basis: 100%;
+  }
 }
