@@ -1,5 +1,5 @@
 @import "fonts"
-
+@import "flexbox"
 
 darker-green = #04E4A2
 lighter-green = #69F0AE
@@ -50,13 +50,13 @@ a
 #header
 	background: darker-red
 	height: 100px
-	display: flex
-	flex-wrap: wrap
+	flexbox()
+	flex-wrap(wrap)
 	position: relative
 	nav
 		width: 100%
-		display: flex
-		justify-content: space-between
+		flexbox()
+		justify-content(space-between)
 		.logo
 			font-size: 2em 
 			font-weight: bold
@@ -71,6 +71,7 @@ a
 
 /* -------- Main part ----------*/
 .red 
+	flexbox()
 	background: lighter-red
 	position: absolute
 	width: 100%
@@ -78,163 +79,162 @@ a
 	z-index: -1
 
 .container
-	display: flex
-	flex-wrap: nowrap
+	flexbox()
 	z-index: 1
 	position: relative
 
-	.content
-		display: flex
-		flex-wrap: wrap
-		flex: 1 0 58.2%
-		padding: 15.6% 4.2% 0 10.7%;
-		height: 100%
-		.introduction
-			display: flex
-			justify-content: center
-			flex-direction: column
-			line-height: 1.2
-			font-weight: normal
-			align-items: center
-			max-height: red-height
-			height: 100%
-			padding-right: 3.5%
-			margin-bottom: 30%
-			h2
-				text-transform: uppercase
-				font-size: 1.8em
-				margin-bottom: 4.5%
-				color: white
+.content
+	flexbox()
+	flex-wrap(wrap)
+	flex(1 0 58.2%)
+	padding: 15.6% 4.2% 0 10.7%;
+	height: 100%
+.introduction
+	flexbox()
+	justify-content(center)
+	flex-direction(column)
+	line-height: 1.2
+	font-weight: normal
+	align-items(center)
+	max-height: red-height
+	height: 100%
+	padding-right: 3.5%
+	margin-bottom: 30%
+	h2
+		text-transform: uppercase
+		font-size: 1.8em
+		margin-bottom: 4.5%
+		color: white
 					
-			p 
-				font-size: 1.2em
-				border-bottom: 1px dashed darker-red
-				padding-bottom: 5.5%
-				margin-bottom: 5.2%
-				color: white
+	p 
+		font-size: 1.2em
+		border-bottom: 1px dashed darker-red
+		padding-bottom: 5.5%
+		margin-bottom: 5.2%
+		color: white
 
-			button
-				align-self: flex-end
-				text-transform: uppercase
-				background: lighter-green
-				color: #ffffff
-				font-size: 1.2em
-				width: 166px
-				height: 53px
-				border-radius: 6px 
-		.form
-			margin-bottom: 5.5%
-		form
-			display: flex
-			flex-direction: column
-			.form-caption
-				color: lighter-red
-				font-size: 1.2em
-				padding: 1% 0 0 4.3%
-				margin-bottom: 1.5%
-			.textarea
-				flex-basis: 100%
-				margin-top: 1.8%
-				margin-bottom: 2.4%
-				textarea
-					padding: 13px 21px
-					border: 2px solid form-border
-					border-radius: 4px
-					width: 100%
-					height: 98px
-					overflow: auto
-					resize: none
-					color: grey-special
+	button
+		align-self: flex-end
+		text-transform: uppercase
+		background: lighter-green
+		color: #ffffff
+		font-size: 1.2em
+		width: 166px
+		height: 53px
+		border-radius: 6px 
+.form
+	margin-bottom: 5.5%
+form
+	flexbox()
+	flex-direction(column)
+.form-caption
+	color: lighter-red
+	font-size: 1.2em
+	padding: 1% 0 0 4.3%
+	margin-bottom: 1.5%
+.textarea
+	flex-basis(100%)
+	margin-top: 1.8%
+	margin-bottom: 2.4%
+	textarea
+		padding: 13px 21px
+		border: 2px solid form-border
+		border-radius: 4px
+		width: 100%
+		height: 98px
+		overflow: auto
+		resize: none
+		color: grey-special
 							
-			.submit	
-				align-self: flex-end
-				input[type="submit"]
-					background: darker-red
-					height: 45px
-					width: 120px
-					font-size: 1.1em
-					color: white
-					border-radius: 8px
-					text-transform: uppercase	
+.submit	
+	align-self(flex-end)
+	input[type="submit"]
+		background: darker-red
+		height: 45px
+		width: 120px
+		font-size: 1.1em
+		color: white
+		border-radius: 8px
+		text-transform: uppercase	
 
-			.input-section 
-				display: flex
-				flex-wrap: wrap
-				justify-content: space-between
+.input-section 
+	flexbox()
+	flex-wrap(wrap)
+	justify-content(space-between)
 				
-				input
-					flex-basis: 48%
-					border-radius: 4px	
-					border: 2px solid form-border
-					padding: 13px 19px
-					margin: 1.85% 0
-					color: grey
-				input:nth-child(2), select
-					padding: 13px 35px
-				.select-style
-					flex-basis: 48%
-					display: flex
-					padding: 1% 0
-					background: white url("../images/arrow.png") no-repeat 92% 52%
-					select
-						color: grey-special
-						flex-basis: 100%
-						border-radius: 4px	
-						border: 2px solid form-border
-						padding: 13px 35px
-						margin: 1.85% 0
-						background-color: transparent
-						-webkit-appearance: none
-		       			-moz-appearance: none
-		            	appearance: none
-	.phone
-		display: flex
-		justify-content: flex-end
-		flex: 1 0 41.8%
-		margin-bottom: 2.6%
-		.frame
-			z-index: 9
-			display: flex
-			align-self: center
-			position: relative
-			max-width: 100%
-			width: 388px
-			height: 814px
-			max-height: 100%
-			background: url("../images/phone_frame.png") no-repeat
-			.screen
-				position: absolute
-				z-index: 10
-				max-width: 329px
-				max-height: 583px
-				top: 115px
-				left: 28px
-				width: 100%
-				height: 100%
-				background: url("../images/phone_screen.png") no-repeat
+	input
+		flex-basis(48%)
+		border-radius: 4px	
+		border: 2px solid form-border
+		padding: 13px 19px
+		margin: 1.85% 0
+		color: grey
+	input:nth-child(2), select
+		padding: 13px 35px
+	.select-style
+		flex-basis(48%)
+		flexbox()
+		padding: 1% 0
+		background: white url("../images/arrow.png") no-repeat 92% 52%
+		select
+			color: grey-special
+			flex-basis(100%)
+			border-radius: 4px	
+			border: 2px solid form-border
+			padding: 13px 35px
+			margin: 1.85% 0
+			background-color: transparent
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+.phone
+	flexbox()
+	justify-content(flex-end)
+	flex(1 0 41.8%)
+	margin-bottom: 2.6%
+.frame
+	z-index: 9
+	flexbox()
+	align-self(center)
+	position: relative
+	max-width: 100%
+	width: 388px
+	height: 814px
+	max-height: 100%
+	background: url("../images/phone_frame.png") no-repeat
+.screen
+	position: absolute
+	z-index: 10
+	max-width: 329px
+	max-height: 583px
+	top: 115px
+	left: 28px
+	width: 100%
+	height: 100%
+	background: url("../images/phone_screen.png") no-repeat
 			
-		.darker-line
-			position: absolute
-			border-bottom: 82px solid darker-green
-			border-left: 50px solid transparent
-			border-right: 35px solid transparent
-			height: 0
-			width: 130%
-			left: -67.7%
-			top: 12.3%
-			z-index: 3
-			-webkit-transform: rotate(37.6deg)
-		.lighter-line
-			position: absolute
-			border-bottom: 82px solid lighter-green
-			border-left: 50px solid transparent
-			border-right: 35px solid transparent
-			height: 0
-			width: 130%
-			left: -66.9%
-			top: 23%
-			z-index: 4
-			-webkit-transform: rotate(37.6deg)
+.darker-line
+	position: absolute
+	border-bottom: 82px solid darker-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 130%
+	left: -67.7%
+	top: 12.3%
+	z-index: 3
+	-webkit-transform: rotate(37.6deg)
+.lighter-line
+	position: absolute
+	border-bottom: 82px solid lighter-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 130%
+	left: -66.9%
+	top: 23%
+	z-index: 4
+	-webkit-transform: rotate(37.6deg)
 	
 
 
@@ -243,19 +243,19 @@ a
 	color: #000000
 	background: footer-color
 	height: 73px
-	display: flex
+	flexbox()
 	.footer
 		width: 100%
-		display: flex
-		flex: 1 0 50%
+		flexbox()
+		flex(1 0 50%)
 		.copyright, .contact
-			align-self: center
+			align-self(center)
 			flex: 1 0 40%
 		.copyright
 			padding-left: 9.5%
 		.contact
-			display: flex
-			align-items: center
+			flexbox()
+			align-items(center)
 			padding-left: 2.4%
 			.mail-icon
 				background: url("../images/mail_icon.png") no-repeat 0 0
@@ -263,17 +263,37 @@ a
 				height: 24px
 				margin-right: 19px
 
-@media screen and (min-width: 1145px) and (max-width: 1199px)
+@media screen and (min-width: 1135px) and (max-width: 1199px)
 	.red 
 		height: 48.7vw
 		
-@media screen and (min-width: 768px) and (max-width: 1144px)
+@media screen and (min-width: 768px) and (max-width: 1134px)
+	.red 
+		height: 53vw
+	.phone
+		display: none
+	.introduction
+		margin-bottom: 16%
+@media screen and (min-width: 400px) and (max-width: 767px)
+	.red 
+		height: 85%
 	.container .phone
 		display: none
-@media screen and (max-width: 767px)
+	.container .content .introduction
+		margin-bottom: 12%
 	.container .phone
 		display: none
-	.form-caption, .input-section, .select-style, .submit
-		flex-basis: 100%		
+	.form-caption, .input-section input, .form .select-style, .form .submit
+		flex-basis(100%	)	
 
-
+@media screen and (max-width: 399px)
+	.red 
+		height: 60%
+	.container .phone
+		display: none
+	.container .content .introduction
+		margin-bottom: 12%
+	.container .phone
+		display: none
+	.form-caption, .input-section input, .form .select-style, .form .submit
+		flex-basis(100%)
