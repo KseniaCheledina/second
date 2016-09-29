@@ -12,11 +12,12 @@ form-border = #E3F2FD
 grey = #636363
 grey-special = rgba(99, 99, 99, 0.57)
 white = #ffffff
-red-height = 583px
+
 /* -------- Genera part ----------*/
 html
-	width: 100%
-	height: 100%
+	min-height: 100%
+	flexbox()
+	flex-direction(column)
 *
 	padding: 0
 	margin: 0
@@ -25,12 +26,15 @@ html
 	box-sizing: border-box
 
 body
+	z-index: -1
 	line-height: 1
 	width: 100%
 	height: 100%
 	font-family: Montserrat, sans-serif
 	font-size: 16px
 	color: white
+	flexbox()
+	flex-direction(column)
 ul
 	li
 		list-style: none
@@ -40,6 +44,8 @@ a
 .positioner
 	max-width: 1200px
 	margin: 0 auto
+	flexbox()
+	position: relative
 
 /* -------- Header part ----------*/
 
@@ -48,6 +54,7 @@ a
 	background: darker-green
 	height: 22px
 #header
+	width: 100%
 	background: darker-red
 	height: 100px
 	flexbox()
@@ -70,25 +77,24 @@ a
 					padding-bottom: 1.5%
 
 /* -------- Main part ----------*/
+
+	/*------ red part --------*/
+main
+	flexbox()
+	flex-direction(column)
+	width: 100%
+	flex-grow: 1
 .red 
 	flexbox()
 	background: lighter-red
-	position: absolute
 	width: 100%
-	height: red-height
 	z-index: -1
-
-.container
-	flexbox()
-	z-index: 1
-	position: relative
 
 .content
 	flexbox()
-	flex-wrap(wrap)
 	flex(1 0 58.2%)
-	padding: 15.6% 4.2% 0 10.7%;
-	height: 100%
+	padding-right: 5.9%
+	padding-left: 11%
 .introduction
 	flexbox()
 	justify-content(center)
@@ -96,23 +102,26 @@ a
 	line-height: 1.2
 	font-weight: normal
 	align-items(center)
-	max-height: red-height
-	height: 100%
-	padding-right: 3.5%
-	margin-bottom: 30%
 	h2
 		text-transform: uppercase
 		font-size: 1.8em
-		margin-bottom: 4.5%
 		color: white
+	h2::after
+		content: ""
+		display: block
+		padding-bottom: 4.4%
+		height: 0
 					
 	p 
 		font-size: 1.2em
 		border-bottom: 1px dashed darker-red
-		padding-bottom: 5.5%
-		margin-bottom: 5.2%
 		color: white
-
+		
+	p::after
+		content: ""
+		display: block
+		padding-bottom: 4.4%
+		height: 0
 	button
 		align-self: flex-end
 		text-transform: uppercase
@@ -122,20 +131,76 @@ a
 		width: 166px
 		height: 53px
 		border-radius: 6px 
+	
+		
+.phone-top
+	flexbox()
+	justify-content(flex-end)
+	flex(0 0 41.8%)
+	height: 583px
+.frame
+	position: relative
+	top: 64px
+	z-index: 9
+	max-width: 100%
+	width: 388px
+	height: 814px
+	background: url("../images/phone_frame.png") no-repeat
+.screen
+	position: absolute
+	z-index: 10
+	max-width: 329px
+	max-height: 583px
+	top: 115px
+	left: 28px
+	width: 100%
+	height: 100%
+	background: url("../images/phone_screen.png") no-repeat
+			
+.darker-line
+	position: absolute
+	border-bottom: 82px solid darker-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 130%
+	left: -67.7%
+	top: 20.3%
+	z-index: 3
+	-webkit-transform: rotate(37.6deg)
+.lighter-line
+	position: absolute
+	border-bottom: 82px solid lighter-green
+	border-left: 50px solid transparent
+	border-right: 35px solid transparent
+	height: 0
+	width: 130%
+	left: -66.9%
+	top: 38%
+	z-index: 4
+	-webkit-transform: rotate(37.6deg)
+
+
+    /*-------- white part --------*/
+
 .form
-	margin-bottom: 5.5%
+	flexbox()
+	justify-content(space-between)
+.phone-bottom
+	flex(1 0 41.8%)
+	width: 100%
+	
 form
+	width: 100%
 	flexbox()
 	flex-direction(column)
+	flex(1 0 58.2%)
+	padding-right: 5.9%
 .form-caption
 	color: lighter-red
 	font-size: 1.2em
-	padding: 1% 0 0 4.3%
-	margin-bottom: 1.5%
 .textarea
 	flex-basis(100%)
-	margin-top: 1.8%
-	margin-bottom: 2.4%
 	textarea
 		padding: 13px 21px
 		border: 2px solid form-border
@@ -167,7 +232,6 @@ form
 		border-radius: 4px	
 		border: 2px solid form-border
 		padding: 13px 19px
-		margin: 1.85% 0
 		color: grey
 	input:nth-child(2), select
 		padding: 13px 35px
@@ -187,57 +251,8 @@ form
 			-webkit-appearance: none
 			-moz-appearance: none
 			appearance: none
-.phone
-	flexbox()
-	justify-content(flex-end)
-	flex(1 0 41.8%)
-	margin-bottom: 2.6%
-.frame
-	z-index: 9
-	flexbox()
-	align-self(center)
-	position: relative
-	max-width: 100%
-	width: 388px
-	height: 814px
-	max-height: 100%
-	background: url("../images/phone_frame.png") no-repeat
-.screen
-	position: absolute
-	z-index: 10
-	max-width: 329px
-	max-height: 583px
-	top: 115px
-	left: 28px
-	width: 100%
-	height: 100%
-	background: url("../images/phone_screen.png") no-repeat
-			
-.darker-line
-	position: absolute
-	border-bottom: 82px solid darker-green
-	border-left: 50px solid transparent
-	border-right: 35px solid transparent
-	height: 0
-	width: 130%
-	left: -67.7%
-	top: 12.3%
-	z-index: 3
-	-webkit-transform: rotate(37.6deg)
-.lighter-line
-	position: absolute
-	border-bottom: 82px solid lighter-green
-	border-left: 50px solid transparent
-	border-right: 35px solid transparent
-	height: 0
-	width: 130%
-	left: -66.9%
-	top: 23%
-	z-index: 4
-	-webkit-transform: rotate(37.6deg)
+
 	
-
-
 /* -------- Footer part ----------*/
 #footer
 	color: #000000
@@ -275,8 +290,10 @@ form
 	.introduction
 		margin-bottom: 16%
 @media screen and (min-width: 400px) and (max-width: 767px)
+	.input-section input:nth-child(2), .input-section .select-style select
+		padding: 13px 19px
 	.red 
-		height: 85%
+		height: 400px
 	.container .phone
 		display: none
 	.container .content .introduction
