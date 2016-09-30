@@ -15,34 +15,34 @@ html
 				ul
 					li
 						a contact us
-		.red
 		main
-			.container.positioner
-				.phone
-					.frame
-						.screen
-					.darker-line
-					.lighter-line
-				.content
-					.introduction
-						h2 we design and build beautiful web &amp; mobile apps
-						p You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality. - Walt Disney
-						button Know more
-					.form
-						form
-							.form-caption Let's Talk
-							.input-section
-								input(type="text", name="firstname", placeholder="First Name")
-								input(type="text", name="lastname", placeholder="Last Name")
-								input(type="email", name="email", placeholder="Email Address")
-								.select-style
-									select(name="design")
-										option(value="option1") App Design
-										option(value="option2") Option 2
-							.textarea
-								textarea(name="message", rows="3", cols="80") Type your query here
-							.submit
-								input(type="submit", value="Send" class="submit")
+			.red
+				.positioner
+					.phone-top
+						.frame
+							.screen
+						.darker-line
+						.lighter-line
+					.content
+						.introduction
+							h2 we design and build beautiful web &amp; mobile apps
+							p You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality. - Walt Disney
+							.padding
+								button Know more
+			.form
+				.positioner-bottom
+					.phone-bottom
+					form
+						.form-caption Let's Talk
+						.input-section
+							input(type="text", name="firstname", placeholder="First Name")
+							input(type="text", name="lastname", placeholder="Last Name")
+							input(type="email", name="email", placeholder="Email Address")
+							input(type="text", name="design", placeholder="App Design")
+						.textarea
+							textarea(name="message", rows="3", cols="80") Type your query here
+						.submit
+							input(type="submit", value="Send" class="submit")
 
 
 		footer(id="footer")
