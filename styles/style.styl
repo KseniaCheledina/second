@@ -18,6 +18,7 @@ html
 	min-height: 100%
 	flexbox()
 	flex-direction(column)
+	background: white
 *
 	padding: 0
 	margin: 0
@@ -46,6 +47,10 @@ a
 	margin: 0 auto
 	flexbox()
 	position: relative
+.positioner-bottom
+	width: 1200px
+	margin: 0 auto
+	flexbox()
 
 /* -------- Header part ----------*/
 
@@ -72,9 +77,8 @@ a
 			padding: 0.4% 1% 0 0
 			li
 				text-transform: uppercase
-				a
+				a:hover
 					border-bottom: 3px solid hover-color
-					padding-bottom: 1.5%
 
 /* -------- Main part ----------*/
 
@@ -87,43 +91,45 @@ main
 .red 
 	flexbox()
 	background: lighter-red
-	width: 100%
+	max-width: 100%
 	z-index: -1
 
 .content
 	flexbox()
 	flex(1 0 58.2%)
-	padding-right: 5.9%
-	padding-left: 11%
+	padding: 0 5.9% 0 10.6%
 .introduction
 	flexbox()
-	justify-content(center)
 	flex-direction(column)
+	justify-content(center)
 	line-height: 1.2
 	font-weight: normal
-	align-items(center)
 	h2
 		text-transform: uppercase
 		font-size: 1.8em
 		color: white
-	h2::after
+	h2::before
+		content: ""
+		display: block
+		padding-top: 11.7%
+		height: 0
+	h2::after, p::after
 		content: ""
 		display: block
 		padding-bottom: 4.4%
-		height: 0
-					
+		height: 0	
 	p 
 		font-size: 1.2em
 		border-bottom: 1px dashed darker-red
 		color: white
-		
-	p::after
+	.padding
+		align-self(flex-end)
+	.padding::before
 		content: ""
 		display: block
-		padding-bottom: 4.4%
+		padding-top: 18%
 		height: 0
 	button
-		align-self: flex-end
 		text-transform: uppercase
 		background: lighter-green
 		color: #ffffff
@@ -175,8 +181,8 @@ main
 	border-right: 35px solid transparent
 	height: 0
 	width: 130%
-	left: -66.9%
-	top: 38%
+	left: -66.8%
+	top: 38.7%
 	z-index: 4
 	-webkit-transform: rotate(37.6deg)
 
@@ -185,20 +191,48 @@ main
 
 .form
 	flexbox()
-	justify-content(space-between)
 .phone-bottom
 	flex(1 0 41.8%)
 	width: 100%
-	
 form
 	width: 100%
 	flexbox()
 	flex-direction(column)
 	flex(1 0 58.2%)
-	padding-right: 5.9%
+	padding: 0 4.1% 0 10.6%
 .form-caption
 	color: lighter-red
 	font-size: 1.2em
+	padding-left: 4.6%
+.form-caption::before
+	content: ""
+	display: block
+	padding-bottom: 6.5%
+	height: 0	
+.form-caption::after
+	content: ""
+	display: block
+	padding-bottom: 3.5%
+	height: 0
+.input-section 
+	flex-basis(100%)
+	flexbox()
+	flex-wrap(wrap)
+	justify-content(space-between)
+	height: 100%
+	input
+		flex-basis(48%)
+		height: 50px
+		border-radius: 4px	
+		border: 2px solid form-border
+		padding: 13px 19px
+		color: grey
+	input:first-child, input:nth-child(2)
+		margin-bottom: 17px
+	input:nth-child(2), input:last-child
+		padding-left: 35px
+	input:last-child
+		background: url("../images/arrow.png") no-repeat 92% 52%
 .textarea
 	flex-basis(100%)
 	textarea
@@ -207,10 +241,14 @@ form
 		border-radius: 4px
 		width: 100%
 		height: 98px
-		overflow: auto
 		resize: none
 		color: grey-special
-							
+.textarea::before
+	content: ""
+	display: block
+	padding-bottom: 3.4%
+	height: 0
+						
 .submit	
 	align-self(flex-end)
 	input[type="submit"]
@@ -222,38 +260,24 @@ form
 		border-radius: 8px
 		text-transform: uppercase	
 
-.input-section 
-	flexbox()
-	flex-wrap(wrap)
-	justify-content(space-between)
-				
-	input
-		flex-basis(48%)
-		border-radius: 4px	
-		border: 2px solid form-border
-		padding: 13px 19px
-		color: grey
-	input:nth-child(2), select
-		padding: 13px 35px
-	.select-style
-		flex-basis(48%)
-		flexbox()
-		padding: 1% 0
-		background: white url("../images/arrow.png") no-repeat 92% 52%
-		select
-			color: grey-special
-			flex-basis(100%)
-			border-radius: 4px	
-			border: 2px solid form-border
-			padding: 13px 35px
-			margin: 1.85% 0
-			background-color: transparent
-			-webkit-appearance: none
-			-moz-appearance: none
-			appearance: none
 
-	
+.submit::before
+	content: ""
+	display: block
+	padding-bottom: 11.5%
+	height: 0
+.submit::after
+	content: ""
+	display: block
+	padding-bottom: 24%
+	height: 0
 /* -------- Footer part ----------*/
+
+#footer::before
+	content: ""
+	display: block
+	padding-bottom: 2%
+	height: 0
 #footer
 	color: #000000
 	background: footer-color
@@ -277,40 +301,31 @@ form
 				width: 30px
 				height: 24px
 				margin-right: 19px
-
-@media screen and (min-width: 1135px) and (max-width: 1199px)
-	.red 
-		height: 48.7vw
-		
-@media screen and (min-width: 768px) and (max-width: 1134px)
-	.red 
-		height: 53vw
-	.phone
+				
+@media screen and (min-width: 768px) and (max-width: 1199px)
+	.phone-top, .phone-bottom
 		display: none
-	.introduction
-		margin-bottom: 16%
-@media screen and (min-width: 400px) and (max-width: 767px)
-	.input-section input:nth-child(2), .input-section .select-style select
+	.padding::after
+		content: ""
+		display: block
+		padding-top: 10%
+		height: 0
+@media screen and (max-width: 767px)
+	.phone-top, .phone-bottom
+		display: none
+	.padding::after
+		content: ""
+		display: block
+		padding-top: 10%
+		height: 0
+	.input-section input:nth-child(2), .input-section input:last-child
 		padding: 13px 19px
-	.red 
-		height: 400px
-	.container .phone
-		display: none
-	.container .content .introduction
-		margin-bottom: 12%
-	.container .phone
-		display: none
-	.form-caption, .input-section input, .form .select-style, .form .submit
-		flex-basis(100%	)	
-
-@media screen and (max-width: 399px)
-	.red 
-		height: 60%
-	.container .phone
-		display: none
-	.container .content .introduction
-		margin-bottom: 12%
-	.container .phone
-		display: none
-	.form-caption, .input-section input, .form .select-style, .form .submit
+	input:nth-child(3), input:last-child
+		margin-bottom: 17px
+	.input-section input 
 		flex-basis(100%)
+
+		
+
+
+
