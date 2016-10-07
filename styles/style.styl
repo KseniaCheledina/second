@@ -70,14 +70,16 @@ a
 		flexbox()
 		justify-content(space-between)
 		.logo
-			font-size: 2em 
-			font-weight: bold
-			padding-left: 13%
+			font-size: 2.1em 
+			font-weight: 700
+			padding-left: 12.3%
 		ul	
-			padding: 0.4% 1% 0 0
+			font-weight: 200
+			font-size: 1.06em
+			padding: 0.45% 0.5% 0 0
 			li
 				text-transform: uppercase
-				a:hover
+				a
 					border-bottom: 3px solid hover-color
 
 /* -------- Main part ----------*/
@@ -97,7 +99,7 @@ main
 .content
 	flexbox()
 	flex(1 0 58.2%)
-	padding: 0 5.9% 0 10.6%
+	padding: 0 5.3% 0 10.6%
 .introduction
 	flexbox()
 	flex-direction(column)
@@ -106,38 +108,43 @@ main
 	font-weight: normal
 	h2
 		text-transform: uppercase
-		font-size: 1.8em
+		font-weight: 400
+		font-size: 1.92em
 		color: white
 	h2::before
 		content: ""
 		display: block
-		padding-top: 11.7%
+		padding-top: 11.3%
 		height: 0
-	h2::after, p::after
+	p::after, p::before
 		content: ""
 		display: block
-		padding-bottom: 4.4%
+		padding-bottom: 4.5%
 		height: 0	
 	p 
-		font-size: 1.2em
+		font-size: 1.128em
+		font-weight: 200
+		line-height: 1.25
 		border-bottom: 1px dashed darker-red
 		color: white
+		
 	.padding
 		align-self(flex-end)
+		padding-right: 1.5%
 	.padding::before
 		content: ""
 		display: block
-		padding-top: 18%
+		padding-top: 19%
 		height: 0
 	button
 		text-transform: uppercase
 		background: lighter-green
 		color: #ffffff
-		font-size: 1.2em
+		font-size: 1.21em
 		width: 166px
 		height: 53px
+		padding-left: 6%
 		border-radius: 6px 
-	
 		
 .phone-top
 	flexbox()
@@ -173,7 +180,7 @@ main
 	left: -67.7%
 	top: 20.3%
 	z-index: 3
-	-webkit-transform: rotate(37.6deg)
+	-webkit-transform: rotate(37.7deg)
 .lighter-line
 	position: absolute
 	border-bottom: 82px solid lighter-green
@@ -182,9 +189,9 @@ main
 	height: 0
 	width: 130%
 	left: -66.8%
-	top: 38.7%
+	top: 39.3%
 	z-index: 4
-	-webkit-transform: rotate(37.6deg)
+	-webkit-transform: rotate(37.7deg)
 
 
     /*-------- white part --------*/
@@ -202,8 +209,9 @@ form
 	padding: 0 4.1% 0 10.6%
 .form-caption
 	color: lighter-red
-	font-size: 1.2em
-	padding-left: 4.6%
+	font-size: 1.22em
+	font-weight: 300
+	padding-left: 4.4%
 .form-caption::before
 	content: ""
 	display: block
@@ -219,13 +227,15 @@ form
 	flexbox()
 	flex-wrap(wrap)
 	justify-content(space-between)
-	height: 100%
 	input
 		flex-basis(48%)
 		height: 50px
-		border-radius: 4px	
+		font-family: Montserrat
+		font-weight: 300	
+		font-size: 0.97em
 		border: 2px solid form-border
-		padding: 13px 19px
+		border-radius: 4px
+		padding: 13px 20px
 		color: grey
 	input:first-child, input:nth-child(2)
 		margin-bottom: 17px
@@ -233,20 +243,32 @@ form
 		padding-left: 35px
 	input:last-child
 		background: url("../images/arrow.png") no-repeat 92% 52%
+
+input::-webkit-input-placeholder
+	color: #636363
+input:-moz-placeholder 
+	color: #636363
+input::-moz-placeholder 
+	color: #636363
+input:-ms-input-placeholder 
+	color: #636363
+
 .textarea
-	flex-basis(100%)
 	textarea
-		padding: 13px 21px
+		font-family: Montserrat
+		font-size: 0.96em
+		font-weight: 300
+		padding: 12px 22px
 		border: 2px solid form-border
 		border-radius: 4px
 		width: 100%
 		height: 98px
 		resize: none
-		color: grey-special
+		color: grey
 .textarea::before
 	content: ""
 	display: block
-	padding-bottom: 3.4%
+	padding-bottom: 3.3%
 	height: 0
 						
 .submit	
@@ -255,11 +277,11 @@ form
 		background: darker-red
 		height: 45px
 		width: 120px
-		font-size: 1.1em
+		font-size: 1.25em
+		font-weight: 600
 		color: white
 		border-radius: 8px
 		text-transform: uppercase	
-
 
 .submit::before
 	content: ""
@@ -283,24 +305,26 @@ form
 	background: footer-color
 	height: 73px
 	flexbox()
-	.footer
-		width: 100%
-		flexbox()
-		flex(1 0 50%)
-		.copyright, .contact
-			align-self(center)
-			flex: 1 0 40%
-		.copyright
-			padding-left: 9.5%
-		.contact
-			flexbox()
-			align-items(center)
-			padding-left: 2.4%
-			.mail-icon
-				background: url("../images/mail_icon.png") no-repeat 0 0
-				width: 30px
-				height: 24px
-				margin-right: 19px
+.footer
+	width: 100%
+	font-size: 0.96em
+	font-weight: 300
+	flexbox()
+	flex(1 0 50%)
+.copyright, .contact
+	align-self(center)
+	flex: 1 0 40%
+.copyright
+	padding-left: 9.5%
+.contact
+	flexbox()
+	align-items(center)
+	padding-left: 2.46%
+.mail-icon
+	background: url("../images/mail_icon.png") no-repeat 0 0
+	width: 30px
+	height: 24px
+	margin: 0 3% 1% 0
 				
 @media screen and (min-width: 768px) and (max-width: 1199px)
 	.phone-top, .phone-bottom
@@ -310,7 +334,7 @@ form
 		display: block
 		padding-top: 10%
 		height: 0
-@media screen and (max-width: 767px)
+@media screen and (min-width: 450px) and (max-width: 767px)
 	.phone-top, .phone-bottom
 		display: none
 	.padding::after
@@ -318,14 +342,33 @@ form
 		display: block
 		padding-top: 10%
 		height: 0
+	.input-section
+		flex-basis(100%)
+	.input-section input 
+		flex-basis(100%)
 	.input-section input:nth-child(2), .input-section input:last-child
 		padding: 13px 19px
 	input:nth-child(3), input:last-child
 		margin-bottom: 17px
+
+@media screen and (max-width: 449px)
+	.phone-top, .phone-bottom
+		display: none
+	.contact .mail-icon
+		display: none
+	.padding::after
+		content: ""
+		display: block
+		padding-top: 10%
+		height: 0
+	.input-section
+		flex-basis(100%)
 	.input-section input 
 		flex-basis(100%)
-
-		
+	.input-section input:nth-child(2), .input-section input:last-child
+		padding: 13px 19px
+	input:nth-child(3), input:last-child
+		margin-bottom: 17px
 
 
 
