@@ -1,0 +1,209 @@
+/* -------- Main part ----------*/
+/*------ red part --------*/
+main {
+  width: 100%;
+  flex-grow: 1;
+}
+.red {
+  background: lighter-red;
+  max-width: 100%;
+  z-index: -1;
+}
+.phone-top {
+  height: 583px;
+}
+.frame {
+  position: relative;
+  top: 64px;
+  z-index: 9;
+  max-width: 100%;
+  width: 388px;
+  height: 814px;
+  background: url("../images/phone_frame.png") no-repeat;
+}
+.screen {
+  position: absolute;
+  z-index: 10;
+  max-width: 329px;
+  max-height: 583px;
+  top: 115px;
+  left: 28px;
+  width: 100%;
+  height: 100%;
+  background: url("../images/phone_screen.png") no-repeat;
+}
+.darker-line {
+  position: absolute;
+  border-bottom: 82px solid darker-green;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 130%;
+  left: -67.7%;
+  top: 20.3%;
+  z-index: 3;
+  -webkit-transform: rotate(37.7deg);
+}
+.lighter-line {
+  position: absolute;
+  border-bottom: 82px solid lighter-green;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  height: 0;
+  width: 130%;
+  left: -66.8%;
+  top: 39.3%;
+  z-index: 4;
+  -webkit-transform: rotate(37.7deg);
+}
+.content {
+  padding: 0 5.3% 0 10.6%;
+}
+.introduction {
+  line-height: 1.2;
+  font-weight: normal;
+}
+.introduction h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.92em;
+  color: #fff;
+}
+.introduction h2::before {
+  content: "";
+  display: block;
+  padding-top: 11.3%;
+  height: 0;
+}
+.introduction p::after,
+.introduction p::before {
+  content: "";
+  display: block;
+  padding-bottom: 4.5%;
+  height: 0;
+}
+.introduction p {
+  font-size: 1.128em;
+  font-weight: 200;
+  line-height: 1.25;
+  border-bottom: 1px dashed darker-red;
+  color: #fff;
+}
+.introduction .padding {
+  padding-right: 1.5%;
+}
+.introduction .padding::before {
+  content: "";
+  display: block;
+  padding-top: 19%;
+  height: 0;
+}
+.introduction button {
+  text-transform: uppercase;
+  background: lighter-green;
+  color: #fff;
+  font-size: 1.21em;
+  width: 166px;
+  height: 53px;
+  padding-left: 6%;
+  border-radius: 6px;
+}
+/*-------- white part --------*/
+.phone-bottom {
+  width: 100%;
+}
+form {
+  width: 100%;
+  padding: 0 4.1% 0 10.6%;
+}
+.form-caption {
+  color: lighter-red;
+  font-size: 1.22em;
+  font-weight: 300;
+  padding-left: 4.4%;
+}
+.form-caption::before {
+  content: "";
+  display: block;
+  padding-bottom: 6.5%;
+  height: 0;
+}
+.form-caption::after {
+  content: "";
+  display: block;
+  padding-bottom: 3.5%;
+  height: 0;
+}
+.input-section input {
+  height: 50px;
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 0.97em;
+  border: 2px solid form-border;
+  border-radius: 4px;
+  padding: 13px 20px;
+  color: #808080;
+}
+.input-section input:first-child,
+.input-section input:nth-child(2) {
+  margin-bottom: 17px;
+}
+.input-section input:nth-child(2),
+.input-section input:last-child {
+  padding-left: 35px;
+}
+.input-section input:last-child {
+  background: url("../images/arrow.png") no-repeat 92% 52%;
+}
+input::-webkit-input-placeholder {
+  color: #636363;
+}
+input:-moz-placeholder {
+  color: #636363;
+}
+input::-moz-placeholder {
+  color: #636363;
+}
+input:-ms-input-placeholder {
+  color: #636363;
+}
+.textarea textarea {
+  font-family: Montserrat;
+  font-size: 0.96em;
+  font-weight: 300;
+  padding: 12px 22px;
+  border: 2px solid form-border;
+  border-radius: 4px;
+  width: 100%;
+  height: 98px;
+  resize: none;
+  color: #808080;
+}
+.textarea::before {
+  content: "";
+  display: block;
+  padding-bottom: 3.3%;
+  height: 0;
+}
+.submit input[type="submit"] {
+  background: darker-red;
+  height: 45px;
+  width: 120px;
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+.submit::before {
+  content: "";
+  display: block;
+  padding-bottom: 11.5%;
+  height: 0;
+}
+.submit::after {
+  content: "";
+  display: block;
+  padding-bottom: 24%;
+  height: 0;
+}

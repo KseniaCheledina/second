@@ -1,0 +1,30 @@
+.input-section 
+	flex-basis(100%)
+	flexbox()
+	flex-wrap(wrap)
+	justify-content(space-between)
+	input
+		flex-basis(48%)
+		height: 50px
+		font-family: Montserrat
+		font-weight: 300	
+		font-size: 0.97em
+		border: 2px solid form-border
+		border-radius: 4px
+		padding: 13px 20px
+		color: grey
+	input:first-child, input:nth-child(2)
+		margin-bottom: 17px
+	input:nth-child(2), input:last-child
+		padding-left: 35px
+	input:last-child
+		background: url("../images/arrow.png") no-repeat 92% 52%
+
+input::-webkit-input-placeholder
+	color: #636363
+input:-moz-placeholder 
+	color: #636363
+input::-moz-placeholder 
+	color: #636363
+input:-ms-input-placeholder 
+	color: #636363

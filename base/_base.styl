@@ -1,0 +1,53 @@
+@import "_flexbox"
+@import "_fonts"
+
+darker-green = #04E4A2
+lighter-green = #69F0AE
+hover-color = #FDD835
+footer-color = #FEFCF2
+darker-red = #E94643
+lighter-red = #EF5350
+lighter-black = #1D1D1D
+form-border = #E3F2FD
+grey = #636363
+grey-special = rgba(99, 99, 99, 0.57)
+white = #ffffff
+
+/* -------- Genera part ----------*/
+html
+	min-height: 100%
+	flexbox()
+	flex-direction(column)
+	background: white
+*
+	padding: 0
+	margin: 0
+	border: 0
+	font-size: 100%
+	box-sizing: border-box
+
+body
+	z-index: -1
+	line-height: 1
+	width: 100%
+	height: 100%
+	font-family: Montserrat, sans-serif
+	font-size: 16px
+	color: white
+	flexbox()
+	flex-direction(column)
+ul
+	li
+		list-style: none
+a
+	text-decoration: none
+
+.positioner
+	max-width: 1200px
+	margin: 0 auto
+	flexbox()
+	position: relative
+.positioner-bottom
+	width: 1200px
+	margin: 0 auto
+	flexbox()
