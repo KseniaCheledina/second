@@ -24,9 +24,11 @@
 	align-items(center)
 	padding-left: 2.46%
 .mail-icon
-	background: url("../images/mail_icon.png") no-repeat 0 0
+	background: url("images/mail_icon.png") no-repeat 0 0
 	width: 30px
 	height: 24px
 	margin: 0 3% 1% 0
 
-@import "_responsive"
++for_breakpoint(mobile)
+	.contact .mail-icon
+		display: none

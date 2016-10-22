@@ -1,0 +1,14 @@
+
+media_queries = {
+  mobile  : "only screen and (max-width: 449px)",
+  tablet  : "only screen and (min-width: 450px) and (max-width: 767px)",
+  desktop : "only screen and (min-width: 768px) and (max-width: 1199)"
+}
+
+for_breakpoint(breakpoints)
+  conditions = ()
+  for breakpoint in breakpoints
+    push(conditions, media_queries[breakpoint])
+  conditions = join(", ", conditions)
+  @media conditions
+    {block}
