@@ -11,21 +11,5 @@ module.exports = (options) => {
 	output: {
 		path: Path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
-	},
-	plugins: [
-
-	],
-	module: {
-		loaders: [{
-
-		}]
 	}
-};
-
-if (options.isProduction) {
-	webpackConfig.entry = [''];
-
-
-} else {
-	
 }
